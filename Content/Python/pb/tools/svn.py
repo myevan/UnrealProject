@@ -58,7 +58,7 @@ class SVNInfo(SVNResult):
     def revision(self): return self.__cache_attr('revision', '', 'revision', int)
 
     @property
-    def url(self): return self.__cache_attr('url')
+    def url(self): return self.__cache_value('url')
 
     @property
     def rel_url(self): return self.__cache_value('realive-url')
