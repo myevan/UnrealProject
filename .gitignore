@@ -1,0 +1,13 @@
+DerivedDataCache
+Intermediate
+Binaries
+Saved
+__pycache__
+.vs
+.vscode
+.git
+.svn
+*.sln
+*.dll
+*.pdb
+*.modules
