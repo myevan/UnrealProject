@@ -1,4 +1,5 @@
 @echo off
+
 for %%i in ("%~dp0..\..\") do set "PRJ_DIR=%%~fi"
 for %%i in ("%~dp0..\..") do set "PRJ_NAME=%%~ni"
 set PRJ_FILE=%PRJ_DIR%%PRJ_NAME%.uproject
@@ -44,3 +45,4 @@ echo * guid: %PRJ_GUID%
 exit /b 1
 
 :finish
+exit /b 0
