@@ -6,7 +6,7 @@ def test_svn():
     print(svn_info)
 
 def test_log():
-    from pb import LogHelper
+    from pb.log import LogHelper
     LogHelper.info("hello", name="World")
 
     from pb.loggers.json_logger import JsonLogger
@@ -14,7 +14,7 @@ def test_log():
     LogHelper.info("hello", name="JsonLogger", score=100)
 
 def test_patterns():
-    from pb import LogHelper
+    from pb.log import LogHelper
     from pb.patterns import singleton
 
     @singleton
@@ -31,7 +31,7 @@ def test_patterns():
     t2.hello()
 
 if __name__ == '__main__':
-    if 1:
+    if 0:
         test_svn()
     else:
         test_log()

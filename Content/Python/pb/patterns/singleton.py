@@ -1,4 +1,4 @@
-from pb import LogHelper
+from pb.log import LogHelper
 
 def singleton(cls):
     insts = {}
