@@ -4,7 +4,7 @@ import sys
 
 from collections import OrderedDict
 
-from ..log import Logger
+from pb.log import Logger
 
 class JsonLogger(Logger):
     def write(self, lv, msg, **kwargs):

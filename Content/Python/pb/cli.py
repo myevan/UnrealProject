@@ -1,9 +1,10 @@
 # -*- coding:utf8 -*-
 import os
 import sys
-import logging
 import subprocess
 import contextlib
+
+from pb.log import LogHelper
 
 class OSHelper:
     __default_encoding = None
@@ -64,7 +65,7 @@ class AppWrapper:
 
     def run(self, *sub_args):
         total_args = self.main_args + list(sub_args)
-        logging.debug(f"cmd.run:{' '.join(total_args)}")
+        LogHelper.debug("cli", func="run", line=' '.join(total_args))
 
         exit_code = subprocess.call(total_args)
         if self.strict and exit_code != 0:
@@ -72,7 +73,7 @@ class AppWrapper:
 
     def gen_pipe_lines(self, *sub_args):
         total_args = self.main_args + list(sub_args)
-        logging.debug(f"cmd.gen_pipe:{' '.join(total_args)}")
+        LogHelper.debug("cli", func="gen_pipe_lines", line=' '.join(total_args))
 
         proc = subprocess.Popen(
             total_args,
@@ -88,7 +89,7 @@ class AppWrapper:
 
     def read_pipe(self, *sub_args):
         total_args = self.main_args + list(sub_args)
-        logging.debug(f"cmd.read_pipe:{' '.join(total_args)}")
+        LogHelper.debug("cli", func="read_pipe", line=' '.join(total_args))
 
         proc = subprocess.Popen(
             total_args,
@@ -103,7 +104,7 @@ class AppWrapper:
 
     def write_pipe(self, data):
         total_args = self.main_args + list(sub_args)
-        logging.debug(f"cmd.write_pipe:{' '.join(total_args)}")
+        LogHelper.debug("cli", func="write_pipe", line=' '.join(total_args))
 
         proc = subprocess.Popen(
             self.args,

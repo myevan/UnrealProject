@@ -1,10 +1,10 @@
-import logging
 import pb.platforms
 
 from datetime import datetime
+from lxml import etree
 
 from pb.cli import AppWrapper
-from lxml import etree
+from pb.log import LogHelper
 
 class SVNHelper:
     @classmethod
@@ -81,7 +81,7 @@ class SVNInfo(SVNResult):
 
 class SVNTool:
     def __init__(self, work_dir_path=".", exe_file_path='svn'):
-        logging.info(f"svn_exe: {exe_file_path}")
+        LogHelper.info("svn_tool", work_dir_path=work_dir_path, exe_file_path=exe_file_path)
         self.svn = AppWrapper(exe_file_path, "--xml")
         self.work_dir_path = work_dir_path
 
