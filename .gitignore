@@ -3,6 +3,7 @@ Intermediate
 Binaries
 Saved
 __pycache__
+.python-version
 .vs
 .vscode
 .git
