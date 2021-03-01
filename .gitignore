@@ -8,6 +8,7 @@ __pycache__
 .git
 .svn
 *.sln
+*.pyc
 *.dll
 *.pdb
 *.modules
