@@ -1,9 +1,10 @@
 import logging
+import pb.platforms
 
-from lxml import etree
 from datetime import datetime
 
-from ..cli import AppWrapper
+from pb.cli import AppWrapper
+from lxml import etree
 
 class SVNHelper:
     @classmethod
