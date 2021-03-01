@@ -1,10 +1,9 @@
-class SingletonMeta(type):
-    def __new__(meta, cls_name, bases, attrs):
-        new_cls = type.__new__(meta, cls_name, bases, attrs)
-        new_cls._inst = new_cls()
-        return new_cls
+from pb import LogHelper
 
-class Singleton(metaclass=SingletonMeta):
-    @classmethod
-    def get(cls):
-        return cls._inst
+def singleton(cls):
+    insts = {}
+    def get(*args, **kwargs):
+        if not cls in insts:
+            insts[cls] = cls(*args, **kwargs)
+        return insts[cls]
+    return get

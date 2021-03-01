@@ -13,6 +13,24 @@ def test_log():
     LogHelper.bind(JsonLogger())
     LogHelper.info("hello", name="JsonLogger", score=100)
 
+def test_patterns():
+    from pb import LogHelper
+    from pb.patterns import singleton
+
+    @singleton
+    class Test:
+        def __init__(self, name):
+            self.name = name
+
+        def hello(self):
+            LogHelper.info("hello", name=self.name)
+
+    t1 = Test("T1")
+    t2 = Test("T2")
+    t1.hello()
+    t2.hello()
+
 if __name__ == '__main__':
     test_log()
+    test_patterns()
     #test_svn()
