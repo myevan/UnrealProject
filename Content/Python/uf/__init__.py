@@ -1,1 +1,1 @@
-from .helpers import SVNHelper
+from .libs.svn_lib import SVNLibrary

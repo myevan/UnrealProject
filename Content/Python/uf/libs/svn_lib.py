@@ -1,9 +1,9 @@
 import unreal
 
-from .contexts import SVNContext
+from ..ctxs.svn_ctx import SVNContext
 
 @unreal.uclass()
-class SVNHelper(unreal.BlueprintFunctionLibrary):
+class SVNLibrary(unreal.BlueprintFunctionLibrary):
     @unreal.ufunction(params=[str], static=True, meta=dict(Category="PySubversion"))
     def bind_svn_dir(work_dir_path):
         return SVNContext.bind(work_dir_path)

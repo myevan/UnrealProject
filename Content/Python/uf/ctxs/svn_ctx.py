@@ -1,5 +1,5 @@
 from pb.tools.svn_tool import SVNTool
-from .env import Environment
+from ..env import Environment
 
 class SVNContext:
     __inst = None

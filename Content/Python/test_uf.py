@@ -1,19 +1,19 @@
 import unreal
 
 def test_svn():
-    import pb.tools.svn
+    import pb.tools.svn_tool
     import uf.env
-    import uf.contexts
-    import uf.helpers
+    import uf.ctxs.svn_ctx
+    import uf.libs.svn_lib
 
     import imp    
-    imp.reload(pb.tools.svn)    
+    imp.reload(pb.tools.svn_tool)
     imp.reload(uf.env)
-    imp.reload(uf.contexts)
-    imp.reload(uf.helpers)
+    imp.reload(uf.ctxs.svn_ctx)
+    imp.reload(uf.libs.svn_lib)
 
     from uf.env import Environment
-    from uf.contexts import SVNContext    
+    from uf.ctxs.svn_ctx import SVNContext    
     svn_ctx = SVNContext.bind()
     svn_info = svn_ctx.get_info()
 
