@@ -78,7 +78,7 @@ class SVNInfo(SVNResult):
     @property
     def commit_time(self): return self.__cache_value('commit-time', ['commit', 'date'], value_type=SVNHelper.parse_time)
 
-class SVNManager:
+class SVNTool:
     def __init__(self, work_dir_path=".", exe_file_path='svn'):
         logging.info(f"svn_exe: {exe_file_path}")
         self.svn = AppWrapper(exe_file_path, "--xml")

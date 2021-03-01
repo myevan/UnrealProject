@@ -1,7 +1,7 @@
 def test_svn():
-    from pb.tools.svn import SVNManager
-    svn_mgr = SVNManager()
-    svn_info = svn_mgr.get_info()
+    from pb.tools.svn_tool import SVNTool
+    svn_tool = SVNTool()
+    svn_info = svn_tool.get_info()
     assert(svn_info.path == '.')
     print(svn_info)
 
