@@ -4,7 +4,7 @@ import sys
 import logging
 import subprocess
 
-from .helpers.os import OSHelper
+from .helpers.os_helper import OSHelper
 
 class AppWrapper:
     class Error(Exception):
