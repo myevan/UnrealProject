@@ -31,7 +31,7 @@ def test_patterns():
     t2.hello()
 
 if __name__ == '__main__':
-    if 1:
+    if 0:
         test_svn()
     else:
         test_log()

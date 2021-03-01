@@ -1,1 +1,1 @@
-from pb.helpers.log_helper import LogHelper
+from .log import Logger, LogHelper

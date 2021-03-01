@@ -2,8 +2,9 @@ import logging
 import json
 import sys
 
-from ..logger import Logger
 from collections import OrderedDict
+
+from ..log import Logger
 
 class JsonLogger(Logger):
     def write(self, lv, msg, **kwargs):
