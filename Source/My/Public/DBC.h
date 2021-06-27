@@ -24,6 +24,8 @@ private:
 	static FPStringBlock TotalBlks[TotalBlockCount];
 };
 
+#pragma pack(push, 1)
+
 class MY_API FPString
 {
 public:
@@ -36,11 +38,13 @@ public:
 
 	size_t GetSize() const;
 
-private:
-	uint16 BlkIdx;
+private:	
 	uint16 Size;
+	uint16 BlkIdx;
 	uint32 Off;
 };
+
+#pragma pack(pop)
 
 class MY_API FPStringBuilder
 {
