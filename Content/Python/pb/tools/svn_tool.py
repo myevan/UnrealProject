@@ -3,7 +3,7 @@ import pb.platforms
 from datetime import datetime
 from lxml import etree
 
-from pb.cli import AppWrapper
+from pb.console import AppWrapper
 from pb.log import LogHelper
 
 class SVNHelper:
