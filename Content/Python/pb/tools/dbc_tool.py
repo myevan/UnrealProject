@@ -41,7 +41,7 @@ class SchemeTable:
         return [field.c_type for field in self.fields]
 
     def get_record_len(self):
-        return sum(4 if field.c_type is str else len(bytes(field.c_type(0))) for field in self.fields)
+        return sum(8 if field.c_type is str else len(bytes(field.c_type(0))) for field in self.fields)
 
 class SchemeManager:
     @classmethod
@@ -91,9 +91,9 @@ class Table:
             rec_cnt = len(rows)
 
             yield b'XDBC'
-            yield blk_idx_bytes
+            yield bytes(ctypes.c_uint32(rec_cnt))            
             yield bytes(ctypes.c_uint16(rec_len))
-            yield bytes(ctypes.c_uint32(rec_cnt))
+            yield blk_idx_bytes            
 
             strs = []
             str_off = 0            
