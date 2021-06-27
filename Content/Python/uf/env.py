@@ -1,8 +1,10 @@
 import unreal
 import os
-import pb
 
-class Environment(pb.Singleton):
+from pb.patterns.singleton import singleton
+
+@singleton
+class Environment:
     def __init__(self):
         self.__prj_file_path = ""
         self.__prj_dir_path = ""
