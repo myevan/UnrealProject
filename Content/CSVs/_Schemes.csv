@@ -1,0 +1,3 @@
+Table,Field,Type,Flags
+PCharacter,PChId,uint32,PK
+PCharacter,Name,str,
